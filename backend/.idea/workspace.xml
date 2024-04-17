@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7273cdc-3ab9-43d6-96d1-b4cd868ba71d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database/models/packsModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/packsRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/packList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/validatePriceAdjustment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/controller/productController.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/unit/middleware.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/models/productsModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/models/productsModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/productList.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/productList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,40 +48,45 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.docker-compose.yml.mysql: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.6&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/Projeto shopee/SmartPricing/Readme.md&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.create-db.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\User\\AppData\\Local\\JetBrains\\IntelliJ IDEA 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.docker-compose.yml.mysql: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "Jest.Middleware de validação de campos do produto.Deve passar para o próximo middleware se todos os campos estiverem válidos.executor": "Run",
+    "Jest.Middleware de validação de campos do produto.Deve retornar erro se algum campo obrigatório estiver ausente.executor": "Run",
+    "Jest.Middleware de validação de campos do produto.Deve retornar erro se o novo preço não for um número válido.executor": "Run",
+    "Jest.Middleware de validação de campos do produto.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "requests",
+    "javascript.nodejs.core.library.configured.version": "18.14.0",
+    "javascript.nodejs.core.library.typings.version": "18.14.6",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/User/Desktop/Projeto shopee/SmartPricing/Readme.md",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/Users/User/Desktop/Projeto shopee/SmartPricing/backend/node_modules/jest",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.create-db.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\User\\AppData\\Local\\JetBrains\\IntelliJ IDEA 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
     ],
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql_aurora_aws&quot;
+    "DatabaseDriversLRU": [
+      "mysql_aurora_aws"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\Projeto shopee\SmartPricing\backend\database" />
@@ -93,7 +97,58 @@
       <recent name="C:\Users\User\Desktop\Projeto shopee\SmartPricing\backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Jest.Middleware de validação de campos do produto">
+    <configuration name="Middleware de validação de campos do produto" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/testes/unit/middleware.test.js" />
+      <test-names>
+        <test-name value="Middleware de validação de campos do produto" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Middleware de validação de campos do produto.Deve passar para o próximo middleware se todos os campos estiverem válidos" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/testes/unit/middleware.test.js" />
+      <test-names>
+        <test-name value="Middleware de validação de campos do produto" />
+        <test-name value="Deve passar para o próximo middleware se todos os campos estiverem válidos" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Middleware de validação de campos do produto.Deve retornar erro se algum campo obrigatório estiver ausente" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/testes/unit/middleware.test.js" />
+      <test-names>
+        <test-name value="Middleware de validação de campos do produto" />
+        <test-name value="Deve retornar erro se algum campo obrigatório estiver ausente" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Middleware de validação de campos do produto.Deve retornar erro se o novo preço não for um número válido" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/testes/unit/middleware.test.js" />
+      <test-names>
+        <test-name value="Middleware de validação de campos do produto" />
+        <test-name value="Deve retornar erro se o novo preço não for um número válido" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -108,20 +163,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Middleware de validação de campos do produto" />
+        <item itemvalue="Jest.Middleware de validação de campos do produto.Deve retornar erro se algum campo obrigatório estiver ausente" />
+        <item itemvalue="Jest.Middleware de validação de campos do produto.Deve retornar erro se o novo preço não for um número válido" />
+        <item itemvalue="Jest.Middleware de validação de campos do produto.Deve passar para o próximo middleware se todos os campos estiverem válidos" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +189,7 @@
       <workItem from="1713313946223" duration="8086000" />
       <workItem from="1713323102428" duration="84000" />
       <workItem from="1713323616945" duration="3071000" />
-      <workItem from="1713368713522" duration="1046000" />
+      <workItem from="1713368713522" duration="8564000" />
     </task>
     <servers />
   </component>
