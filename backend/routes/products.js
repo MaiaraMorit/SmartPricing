@@ -1,14 +1,13 @@
 const express = require('express');
+const { productList } = require("../services/productList");
 const router = express.Router();
-const products = require('../services/productList');
 router.use(express.json());
 
 router.get('/', async function (req, res, _next) {
   try {
-    const productsHere = await products.productList();
+    const productsHere = await productList();
     console.log('MEUS PRODUTOS AQUI:', productsHere);
 
-    // return res.status(200).json(productsHere);
     return res.json(productsHere);
   } catch (error) {
     console.error('Erro ao buscar produtos:', error);

@@ -1,10 +1,7 @@
-const getProducts = require('../database/models/productsModel');
-const productList = async () => {
-  // const products = await Products.findAll();
-  // return products;
-  // return 'LISTA DE PRODUTOS';
+const { AllProducts } = require("../database/models/productsModel");
 
-  const products = await getProducts.AllProducts();
+const productList = async () => {
+  const products = await AllProducts();
   console.log('MEUS PRODUTOS NO SERVICE:', products);
 
   return products;

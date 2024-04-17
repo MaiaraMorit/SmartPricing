@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 
 async function getAllProducts() {
-  const query = 'SELECT * FROM products';
+  const query = 'SELECT * FROM packs';
 
   try {
     const connection = await mysql.createConnection({
@@ -11,7 +11,6 @@ async function getAllProducts() {
       database: 'dbSmartPricing',
       port: 3308
     });
-    // await connection.connect();
     const [results] = await connection.query(query);
 
     if (results.length === 0) {
@@ -28,12 +27,12 @@ async function getAllProducts() {
 }
 
 // Exemplo de uso
-async function AllProducts() {
- return getAllProducts().then(products => {
-    console.log('MEUS PRODUTOS THEN:', products);
-    return products;
+async function AllPacks() {
+  return getAllProducts().then(packs => {
+    console.log('MEUS PACKS DE PRODUTOS THEN:', packs);
+    return packs;
   });
 }
 
 
-module.exports = { AllProducts };
+module.exports = { AllPacks };
