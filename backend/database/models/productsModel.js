@@ -55,4 +55,52 @@ const findProductByCode = async (codigo) => {
   }
 };
 
-module.exports = { AllProducts, findProductByCode };
+  const findProductByName = async (nomeProduto) => {
+    const query = 'SELECT * FROM products WHERE name LIKE ?';
+
+    try {
+      const connection = await mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '123456',
+        database: 'dbSmartPricing',
+        port: 3308
+      });
+
+      console.log('nome do produto CHEGANDO NA FUNC:', nomeProduto)
+      const results = await connection.query(query, [`%${nomeProduto}%`]);
+      console.log('nome do produto:', results);
+      return results;
+    } catch (error) {
+      console.error('Erro ao buscar produtos:', error);
+      return [];
+    }
+  };
+
+const getProductByNameAndCode = async (codigo, nomeProduto) => {
+  const query = 'SELECT * FROM products WHERE name LIKE ? OR code = ?';
+  ;
+
+  try {
+    const connection = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '123456',
+      database: 'dbSmartPricing',
+      port: 3308
+    });
+
+    const results = await connection.query(query, [nomeProduto, codigo]);
+    return results;
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error);
+    return [];
+  }
+};
+
+const changePriceofProdut = async (_codigo, _nomeProduto, _novoPreco, _aditionalPrice) => {
+  return 'olá mundo';
+
+};
+
+module.exports = { AllProducts, findProductByCode, getProductByNameAndCode, findProductByName, changePriceofProdut };

@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7273cdc-3ab9-43d6-96d1-b4cd868ba71d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/requestPostProductUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/models/productsModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/models/productsModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/productList.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/productList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/controller/productController.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/testes/unit/controller/productController.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/requestPostProductUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/requestPostProductUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/error.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/error.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +94,7 @@
       <recent name="C:\Users\User\Desktop\Projeto shopee\SmartPricing\backend\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Projeto shopee\SmartPricing\backend\testes\unit" />
       <recent name="C:\Users\User\Desktop\Projeto shopee\SmartPricing\backend\database\mySQL" />
       <recent name="C:\Users\User\Desktop\Projeto shopee\SmartPricing\backend\database" />
       <recent name="C:\Users\User\Desktop\Projeto shopee\SmartPricing\backend" />
@@ -139,12 +145,16 @@
       <workItem from="1713407253959" duration="59000" />
       <workItem from="1713407351071" duration="2946000" />
       <workItem from="1713410336105" duration="138000" />
-      <workItem from="1713410703375" duration="6025000" />
+      <workItem from="1713410703375" duration="7280000" />
+      <workItem from="1713445534587" duration="9420000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.pug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
