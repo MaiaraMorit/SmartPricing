@@ -36,48 +36,51 @@ const applyPriceRulesPacks = async (codigo, nomeProduto, novoPreco) => {
   // console.log('MEU ARRAY:', result[0]);
 
   result[0].map(async (e) => {
-    const {name} = e;
+    const  { name } = e;
     if (name.includes('UNIDADES')) {
       const match = name.match(/(\d+)\s*unidades/i);
       const unitsOfProduct = match[1];
 
       const pricePerUnit = Math.round(novoPreco / unitsOfProduct * 100) / 100;
-      // console.log('MEU PREÇO POR UNIDADE:', pricePerUnit);
-      return pricePerUnit
+      console.log('MEU PREÇO POR UNIDADE:', pricePerUnit);
+
+      const changePriceProduct = await changePriceofProdut(e.name, novoPreco, pricePerUnit)
+
+      return changePriceProduct
     }
-    if (name.includes('KIT')) {
-      const parts = name.split('+');
-      console.log('Partes:', parts);
-
-      for (const productName of parts) {
-        const trimmedProductName = productName.trim();
-        const productData = await findProductByName(trimmedProductName);
-
-        // Verificar se o nome do produto não contém 'KIT'
-        if (!trimmedProductName.includes('KIT')) {
-          console.log('Meu Produto:', productData);
-
-          // Verificar se há dados do produto e se há um objeto válido na primeira posição do array
-          if (productData && productData[0]) {
-            const produto = productData[0]; // Acessando o primeiro elemento do array
-            const salesPrice = parseFloat(produto.sales_price); // Converter sales_price para um número de ponto flutuante
-
-            // Calcular o novo preço por unidade
-            const newPricePerUnit = Math.round((salesPrice - novoPreco) / parts.length * 100) / 100;
-
-            // Calcular o novo preço total
-            const result = newPricePerUnit + salesPrice;
-
-            const finalResult = changePriceofProdut(produto.code, produto.name, result)
-
-            console.log('Meu Novo Preço por Unidade:', newPricePerUnit);
-            console.log('Meu Resultado:', finalResult);
-
-            return finalResult;
-          }
-        }
-      }
-    }
+    // if (name.includes('KIT')) {
+    //   const parts = name.split('+');
+    //   console.log('Partes:', parts);
+    //
+    //   for (const productName of parts) {
+    //     const trimmedProductName = productName.trim();
+    //     const productData = await findProductByName(trimmedProductName);
+    //
+    //     // Verificar se o nome do produto não contém 'KIT'
+    //     if (!trimmedProductName.includes('KIT')) {
+    //       console.log('Meu Produto:', productData);
+    //
+    //       // Verificar se há dados do produto e se há um objeto válido na primeira posição do array
+    //       if (productData && productData[0]) {
+    //         const produto = productData[0]; // Acessando o primeiro elemento do array
+    //         const salesPrice = parseFloat(produto.sales_price); // Converter sales_price para um número de ponto flutuante
+    //
+    //         // Calcular o novo preço por unidade
+    //         const newPricePerUnit = Math.round((salesPrice - novoPreco) / parts.length * 100) / 100;
+    //
+    //         // Calcular o novo preço total
+    //         const result = newPricePerUnit + salesPrice;
+    //
+    //         const finalResult = changePriceofProdut(produto.code, produto.name, result)
+    //
+    //         console.log('Meu Novo Preço por Unidade:', newPricePerUnit);
+    //         console.log('Meu Resultado:', finalResult);
+    //
+    //         return finalResult;
+    //       }
+    //     }
+    //   }
+    // }
   })
 
 

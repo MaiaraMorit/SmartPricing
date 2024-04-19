@@ -98,9 +98,37 @@ const getProductByNameAndCode = async (codigo, nomeProduto) => {
   }
 };
 
-const changePriceofProdut = async (_codigo, _nomeProduto, _novoPreco, _aditionalPrice) => {
-  return 'olá mundo';
+const changePriceofProdut = async (_codigo, nomeProduto, novoPreco, aditionalPrice) => {
+  const query = 'UPDATE products SET sales_price = ? WHERE name = ?';
+  try {
+    const connection = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '123456',
+      database: 'dbSmartPricing',
+      port: 3308
+    });
+  if (!name.includes('UNIDADES')) {
+     await connection.query(query, [aditionalPrice, nomeProduto]);
 
+    return 'Preço alterado com sucesso!';
+  }
+  else {
+    await connection.query(query, [novoPreco, nomeProduto]);
+
+    return 'Preço alterado com sucesso!';
+  }
+
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error);
+    return [];
+  };
 };
 
-module.exports = { AllProducts, findProductByCode, getProductByNameAndCode, findProductByName, changePriceofProdut };
+module.exports = {
+  AllProducts,
+  findProductByCode,
+  getProductByNameAndCode,
+  findProductByName,
+  changePriceofProdut
+};
